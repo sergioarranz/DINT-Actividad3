@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class MainActivityFragment extends Fragment {
-
-    // TODO Declarar botones
+    private Button btnPrev,btnNext;
     MainActivityFragmentListener listener;
     MainActivityFragmentEvents events;
 
@@ -20,13 +20,18 @@ public class MainActivityFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
         this.setListener(listener);
         events=new MainActivityFragmentEvents(this);
 
-        //TODO Linkar botones y sus events
+        btnPrev = v.findViewById(R.id.btnPrev);
+        btnPrev.setOnClickListener(events);
+        btnPrev.setText(R.string.btnPrev_title);
+
+        btnNext = v.findViewById(R.id.btnNext);
+        btnNext.setOnClickListener(events);
+        btnNext.setText(R.string.btnNext_title);
         return v;
     }
 }
@@ -40,7 +45,13 @@ class MainActivityFragmentEvents implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View view) {
-        // TODO Llamar a los métodos de la interfaz que gestionan los clics
+    public void onClick(View v) {
+        if (v.getId()==R.id.btnPrev){
+            if(this.mainActivityFragment.listener!=null);
+            this.mainActivityFragment.listener.OnPrevBtnClicked();
+        } else if (v.getId()==R.id.btnNext){
+            if(this.mainActivityFragment.listener!=null);
+            this.mainActivityFragment.listener.OnNextBtnClicked();
+        }
     }
 }
