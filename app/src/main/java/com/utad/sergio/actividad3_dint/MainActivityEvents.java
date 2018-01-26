@@ -8,7 +8,7 @@ import android.view.View;
  * Created by sergio on 25/1/18.
  */
 
-public class MainActivityEvents implements View.OnClickListener, MainActivityFragmentListener, Fragment2Listener, Fragment3Listener, Fragment4Listener {
+public class MainActivityEvents implements View.OnClickListener, MainActivityFragmentListener, Fragment2Listener, Fragment3Listener {
 
     MainActivity mainActivity;
 
@@ -39,6 +39,42 @@ public class MainActivityEvents implements View.OnClickListener, MainActivityFra
         FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
         transition.show(mainActivity.fragment2);
         transition.hide(mainActivity.mainActivityFragment);
+        transition.hide(mainActivity.fragment3);
+        transition.commit();
+    }
+
+    @Override
+    public void OnPrevBtn2Clicked() {
+        FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
+        transition.show(mainActivity.mainActivityFragment);
+        transition.hide(mainActivity.fragment2);
+        transition.hide(mainActivity.fragment3);
+        transition.commit();
+    }
+
+    @Override
+    public void OnNextBtn2Clicked() {
+        FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
+        transition.show(mainActivity.fragment3);
+        transition.hide(mainActivity.mainActivityFragment);
+        transition.hide(mainActivity.fragment2);
+        transition.commit();
+    }
+
+    @Override
+    public void OnPrevBtn3Clicked() {
+        FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
+        transition.show(mainActivity.fragment2);
+        transition.hide(mainActivity.mainActivityFragment);
+        transition.hide(mainActivity.fragment3);
+        transition.commit();
+    }
+
+    @Override
+    public void OnNextBtn3Clicked() {
+        FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
+        transition.show(mainActivity.mainActivityFragment);
+        transition.hide(mainActivity.fragment2);
         transition.hide(mainActivity.fragment3);
         transition.commit();
     }

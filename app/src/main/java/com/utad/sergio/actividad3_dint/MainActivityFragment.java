@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivityFragment extends Fragment {
     private Button btnPrev,btnNext;
+    private TextView tvMainFragmentTitle;
     MainActivityFragmentListener listener;
     MainActivityFragmentEvents events;
 
@@ -24,6 +26,9 @@ public class MainActivityFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
         this.setListener(listener);
         events=new MainActivityFragmentEvents(this);
+
+        tvMainFragmentTitle = v.findViewById(R.id.tv_MainFragmentTitle);
+        tvMainFragmentTitle.setText(R.string.tv_MainFragmentTitle);
 
         btnPrev = v.findViewById(R.id.btnPrev);
         btnPrev.setOnClickListener(events);

@@ -5,4 +5,6 @@ package com.utad.sergio.actividad3_dint;
  */
 
 public interface Fragment3Listener {
+    public void OnPrevBtn3Clicked();
+    public void OnNextBtn3Clicked();
 }

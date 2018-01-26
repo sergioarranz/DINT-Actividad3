@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     MainActivityFragment mainActivityFragment;
     Fragment2 fragment2;
     Fragment3 fragment3;
-    Fragment4 fragment4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         mainActivityFragment = (MainActivityFragment) getSupportFragmentManager().findFragmentById(R.id.MainActivityFragment);
         fragment2 = (Fragment2) getSupportFragmentManager().findFragmentById(R.id.Fragment2);
         fragment3 = (Fragment3) getSupportFragmentManager().findFragmentById(R.id.Fragment3);
-        fragment4 = (Fragment4) getSupportFragmentManager().findFragmentById(R.id.Fragment4);
 
         events = new MainActivityEvents(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -35,13 +33,11 @@ public class MainActivity extends AppCompatActivity {
         mainActivityFragment.setListener(events);
         fragment2.setListener(events);
         fragment3.setListener(events);
-        fragment4.setListener(events);
 
         FragmentTransaction transition = getSupportFragmentManager().beginTransaction();
         transition.show(mainActivityFragment);
         transition.hide(fragment2);
         transition.hide(fragment3);
-        transition.hide(fragment4);
         transition.commit();
     }
 

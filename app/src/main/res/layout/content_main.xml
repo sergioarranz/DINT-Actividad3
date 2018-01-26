@@ -30,11 +30,4 @@
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_fragment3" />
 
-    <fragment
-        android:id="@+id/Fragment4"
-        android:name="com.utad.sergio.actividad3_dint.Fragment4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_fragment4" />
-
 </android.support.constraint.ConstraintLayout>
