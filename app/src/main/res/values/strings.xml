@@ -6,4 +6,5 @@
     <string name="tv_MainFragmentTitle">Fragment Principal</string>
     <string name="tv_Fragment2Title">Fragment 2</string>
     <string name="tv_Fragment3Title">Fragment 3</string>
+    <string name="tvHelloWorld">HOLA MUNDO</string>
 </resources>

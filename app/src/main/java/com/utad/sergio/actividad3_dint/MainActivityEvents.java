@@ -19,8 +19,12 @@ public class MainActivityEvents implements View.OnClickListener, MainActivityFra
     @Override
     public void onClick(View v) {
         if (v.getId()==R.id.fab){
-            Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
+            transition.show(mainActivity.helloWorldFragment);
+            transition.hide(mainActivity.mainActivityFragment);
+            transition.hide(mainActivity.fragment2);
+            transition.hide(mainActivity.fragment3);
+            transition.commit();
         }
     }
 

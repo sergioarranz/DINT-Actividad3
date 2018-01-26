@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Fragment3Theme"
     tools:context="com.utad.sergio.actividad3_dint.Fragment3"
     tools:showIn="@layout/fragment_fragment3">
 
