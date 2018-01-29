@@ -1,6 +1,5 @@
 package com.utad.sergio.actividad3_dint;
 
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
@@ -19,12 +18,15 @@ public class MainActivityEvents implements View.OnClickListener, MainActivityFra
     @Override
     public void onClick(View v) {
         if (v.getId()==R.id.fab){
-            FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
-            transition.show(mainActivity.helloWorldFragment);
-            transition.hide(mainActivity.mainActivityFragment);
-            transition.hide(mainActivity.fragment2);
-            transition.hide(mainActivity.fragment3);
-            transition.commit();
+            if (mainActivity.helloWorldFragment.isHidden()) {
+                FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
+                transition.show(mainActivity.helloWorldFragment);
+                transition.commit();
+            } else {
+                FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
+                transition.hide(mainActivity.helloWorldFragment);
+                transition.commit();
+            }
         }
     }
 

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
     MainActivityEvents events;
@@ -25,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
         helloWorldFragment = (HelloWorldFragment) getSupportFragmentManager().findFragmentById(R.id.HelloWorldFragment);
 
         events = new MainActivityEvents(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(events);
